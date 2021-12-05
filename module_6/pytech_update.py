@@ -15,18 +15,20 @@ db = client.pytech
 
 my_col = db.students
 
-my_queries = my_col.find({})
+my_query = my_col.find({})
+
+for queries in my_query:
+    print("First query:", queries)
+
+my_queries = my_col.find_one({},{"student_id": 1007})
 
 for query in my_queries:
-    print("First query:", query)
+    print("second_one:", query) 
 
-second_query = my_col.find_one({"student_id": 1007})
-
-
-print("second_one:", second_query) 
+update = db.collection.update_one({"student_id": 1007, {"$set": {"last_name": "Smith"}}})
 
 #show the connected collections
 print(db.list_collection_names)
 
 #show an exit message
-input("\n\n End of program, press any key to exit.......") 
+input("\n\n End of program, press any key to exit.......")
