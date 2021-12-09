@@ -22,7 +22,6 @@ for query in my_queries:
 
 second_query = my_col.find_one({"student_id": 1007})
 
-
 print("second_one:", second_query) 
 
 #show the connected collections
