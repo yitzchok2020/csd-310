@@ -20,6 +20,13 @@ my_queries = my_col.find({})
 for query in my_queries:
     print("First query:", query)
 
+update_query = my_col.update_one(
+    {"student_id": 1007},
+    {"$set":
+        {"last_name": "Smith"}
+    }
+)
+
 second_query = my_col.find_one({"student_id": 1007})
 
 
