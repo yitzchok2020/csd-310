@@ -42,14 +42,14 @@ ezekiel_student = my_col.insert_one(Ezekiel)
 
 second_query = my_col.find_one({"student_id": 1010})
 
-print("second_one:", second_query) 
+print("Student 1010:", second_query) 
 
 final_result = my_col.delete_one({"student_id": 1010})
 
 my_queries = my_col.find({})
 
 for query in my_queries:
-    print("First query:", query)
+    print("Second query:", query)
 
 #show the connected collections
 print(db.list_collection_names)
